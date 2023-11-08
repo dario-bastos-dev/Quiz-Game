@@ -1,0 +1,68 @@
+body{
+
+    max-height: 1500px;
+
+    max-width: 1280px ;
+
+    background-image: url(/src/img/img-principal/Group\ 16.png);
+
+    background-repeat: no-repeat;
+
+    background-size: 73%;
+
+    background-position: 50%  22% ;
+
+    background-color: #000;
+
+    font-family: 'Montserrat', sans-serif, Arial, Helvetica, sans-serif;
+}
+
+
+/* Página principal */
+
+#principal{
+
+    /*background-color: blue;*/
+
+    display: block;
+
+    flex-direction: column;
+}
+
+#principal .title{
+
+    /* background-color: red; */
+
+    color: #f8f8f8;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    text-align: center;
+
+    padding: 5% 0 0 15%;
+
+    margin-bottom: 7%;
+
+    font-size: 60px;
+
+}
+
+#principal .but{
+
+    width: 200px;
+    height: 70px;
+    font-size: 32px;
+    border-radius: 10px;
+    background-color: blue;
+    color: #f8f8f8;
+    margin: 0 0 0 50%;
+    border: none;
+    letter-spacing: 3px;
+}
+
+
+/* Modelo de página de perguntas */
+
+.hide{
+    display: none !important;
+}
