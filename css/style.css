@@ -61,6 +61,12 @@ body{
 }
 
 
+#principal .but:hover{
+
+    cursor: pointer;
+    scale: 1.05;
+}
+
 /* Modelo de página de perguntas */
 
 .hide{
