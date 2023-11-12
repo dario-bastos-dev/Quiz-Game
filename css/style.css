@@ -4,7 +4,7 @@ body{
 
     max-width: 1280px ;
 
-    background-image: url(../img/img-principal/img-principal.png);
+   /* background-image: url(../img/img-principal/img-principal.png);
 
     background-repeat: no-repeat;
 
@@ -12,7 +12,9 @@ body{
 
     background-position: 50%  22% ;
 
-    background-color: #000;
+    background-color: #000; */
+
+    background-color: #fff;
 
     font-family: 'Montserrat', sans-serif, Arial, Helvetica, sans-serif;
 }
@@ -67,8 +69,82 @@ body{
     scale: 1.05;
 }
 
-/* Modelo de página de perguntas */
+/* Escondendo páginas */
 
 .hide{
     display: none !important;
+}
+
+/* Modelo de página de perguntas */
+
+#questions {
+    margin: 30px 20% 0;
+}
+
+/* Enunciado */
+
+#questions .enunciado { 
+    display: flex;
+    margin: 0 0 10% 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#questions .enunciado .number {
+    padding: 0 10px 0 0;
+    color: #2E12DF ;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+/* Perguntas */
+
+#questions .alternativas #resposta-A,#resposta-B,#resposta-C,#resposta-D {
+
+    display: flex;
+    margin: 0 0 4% 0;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border: solid 2px;
+    border-radius: 10px;
+    
+}
+
+#questions .alternativas .resp {
+
+    margin: 5px 0 0 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#questions .alternativas img {
+
+    width: 40px;
+}
+
+#questions .alternativas #resposta-A:hover,#resposta-B:hover,#resposta-C:hover,#resposta-D:hover {
+
+    border: #2E12DF solid 3px;
+}
+
+/* Botão avançar */
+
+#questions .avancar{
+
+    width: 150px;
+    height: 50px;
+    font-size: 22px;
+    border-radius: 10px;
+    background-color: blue;
+    color: #f8f8f8;
+    margin: 0 0 0 80.7%;
+    border: none;
+    letter-spacing: 3px;
+}
+
+
+#questions .avancar:hover{
+
+    cursor: pointer;
+    scale: 1.05;
 }
