@@ -4,7 +4,7 @@ body{
 
     max-width: 1280px ;
 
-   /* background-image: url(../img/img-principal/img-principal.png);
+    background-image: url(../img/img-principal/img-principal.png);
 
     background-repeat: no-repeat;
 
@@ -12,9 +12,7 @@ body{
 
     background-position: 50%  22% ;
 
-    background-color: #000; */
-
-    background-color: #fff;
+    background-color: #000; 
 
     font-family: 'Montserrat', sans-serif, Arial, Helvetica, sans-serif;
 }
