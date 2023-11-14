@@ -103,7 +103,7 @@ body{
     margin: 0 0 4% 0;
     background-color: #f8f8f8;
     padding: 10px;
-    border: solid 2px;
+    border:#000 solid 2px;
     border-radius: 10px;
     
 }
@@ -120,9 +120,10 @@ body{
     width: 40px;
 }
 
-#questions .alternativas #resposta-A:hover,#resposta-B:hover,#resposta-C:hover,#resposta-D:hover {
+#questions .alternativas .resposta:hover {
 
-    border: #2E12DF solid 3px;
+    border: #2E12DF solid 3px !important;
+    cursor: default;
 }
 
 /* Botão avançar */
