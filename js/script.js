@@ -4,9 +4,7 @@ let containerPrincipal = document.querySelector("#principal");
 
 let questions = document.querySelector("#questions")
 
-let alternativas = document.querySelector("#questions .alternativas")
-
-let alternativaPai = alternativas.parentNode;
+let alternativas = document.querySelectorAll("#questions .alternativas .resposta");
 
 let respostaA = document.querySelector(".alternativas #resposta-A")
 let respostaB = document.querySelector(".alternativas #resposta-B")
@@ -15,7 +13,8 @@ let respostaD = document.querySelector(".alternativas #resposta-D")
 
 let iniciar = document.querySelector('.but')
 
-let avancar = document.querySelector("avancar")
+let verificar = document.querySelector("#verificar")
+let avancar = document.querySelector("#avancar")
 
 
 // Iniciando o Quiz
@@ -34,76 +33,131 @@ iniciar.addEventListener("click", () => {
 // Selecionando resposta
 
 let selection = 0;
+let resp;
 
-respostaA.addEventListener("click", (e) => {
+for(let i = 0; i < alternativas.length; i++) {
 
-    e.stopPropagation();
+    alternativas[i].addEventListener("click", function() {
 
-    if(selection == 0) {
+        let selected = alternativas[i].getAttribute("id");
+        
+        // Resposta A
+        if(selected == "resposta-A") {
 
-        respostaA.style.border = "#2E12DF solid 3px";
-        selection++;
+            if(selection == 0) {
+
+                 respostaA.style.border = "#2E12DF solid 3px";
+                 selection++;
+                 resp = selected;
+            }
+            else if(selection == 1) {
+
+                 respostaA.style.border = "#2E12DF solid 3px";
+                 respostaB.style.border = "#000 solid 2px";
+                 respostaC.style.border = "#000 solid 2px";
+                 respostaD.style.border = "#000 solid 2px";
+                 resp = selected;
+
+            }
+        }
+        // Resposta B
+        else if(selected == "resposta-B") {
+
+            if(selection == 0) {
+
+                respostaB.style.border = "#2E12DF solid 3px";
+                selection++;
+                resp = selected;
+           }
+           else if(selection == 1) {
+
+                respostaB.style.border = "#2E12DF solid 3px";
+                respostaA.style.border = "#000 solid 2px";
+                respostaC.style.border = "#000 solid 2px";
+                respostaD.style.border = "#000 solid 2px";
+                resp = selected;
+        }
     }
-     else if(selection==1) {
+    // Resposta C
+    else if(selected == "resposta-C") {
 
-        respostaA.style.border = "#2E12DF solid 3px";
-        respostaB.style.border = "#000 solid 2px";
-        respostaC.style.border = "#000 solid 2px";
-        respostaD.style.border = "#000 solid 2px";
+        if(selection == 0) {
 
-     }
-});
-respostaB.addEventListener("click", (e) => {
+            respostaC.style.border = "#2E12DF solid 3px";
+            selection++;
+            resp = selected;
+       }
+       else if(selection == 1) {
 
-    e.stopPropagation();
-
-    if(selection == 0) {
-
-        respostaB.style.border = "#2E12DF solid 3px";
-        selection++;
+            respostaC.style.border = "#2E12DF solid 3px";
+            respostaA.style.border = "#000 solid 2px";
+            respostaB.style.border = "#000 solid 2px";
+            respostaD.style.border = "#000 solid 2px";
+            resp = selected;
     }
-     else if(selection==1) {
-
-        respostaB.style.border = "#2E12DF solid 3px";
-        respostaA.style.border = "#000 solid 2px";
-        respostaC.style.border = "#000 solid 2px";
-        respostaD.style.border = "#000 solid 2px";
-
-     }
-});
-respostaC.addEventListener("click", (e) => {
-
-    e.stopPropagation();
-
-    if(selection == 0) {
-
-        respostaC.style.border = "#2E12DF solid 3px";
-        selection++;
     }
-     else if(selection==1) {
+    // Resposta D
+    else if(selected == "resposta-D") {
+        if(selection == 0) {
 
-        respostaC.style.border = "#2E12DF solid 3px";
-        respostaB.style.border = "#000 solid 2px";
-        respostaA.style.border = "#000 solid 2px";
-        respostaD.style.border = "#000 solid 2px";
+            respostaD.style.border = "#2E12DF solid 3px";
+            selection++;
+            resp = selected;
+       }
+       else if(selection == 1) {
 
-     }
-});
-respostaD.addEventListener("click", (e) => {
-
-    e.stopPropagation();
-
-    if(selection == 0) {
-
-        respostaD.style.border = "#2E12DF solid 3px";
-        selection++;
+            respostaD.style.border = "#2E12DF solid 3px";
+            respostaA.style.border = "#000 solid 2px";
+            respostaC.style.border = "#000 solid 2px";
+            respostaB.style.border = "#000 solid 2px";
+            resp = selected;
     }
-     else if(selection==1) {
+    }
+})
+};
 
-        respostaD.style.border = "#2E12DF solid 3px";
-        respostaB.style.border = "#000 solid 2px";
-        respostaC.style.border = "#000 solid 2px";
-        respostaA.style.border = "#000 solid 2px";
 
-     }
-});
+//Verificando a resposta
+
+let contador = 0;
+let acertos = 0;
+
+verificar.addEventListener("click", function() {
+
+    if(resp == null) {
+        alert("selecione uma alternativa")
+    }
+    else if(resp != null) {
+
+    if(contador == 0) {
+
+        respostaB.style.border = "#4BAE4F solid 3px";
+        let img = respostaB.childNodes[1];
+        img.getAttribute("src");
+        img.setAttribute("src", "./img/certo-errado/image1.png");
+
+        if(resp == "resposta-B") {
+
+            acertos++;
+            contador++;
+        }
+        else if(resp != "resposta-B") {
+
+            contador++;
+            for(let j = 0; j < alternativas.length; j++) {
+
+                if(alternativas[j].getAttribute("id") == resp) {
+
+                    alternativas[j].style.border = "#EC1515 solid 3px";
+                    let img = alternativas[j].childNodes[1];
+                    img.getAttribute("src");
+                    img.setAttribute("src", "./img/certo-errado/image2.png");
+                }
+            }
+        }
+    }
+
+    verificar.classList.add("hide");
+    avancar.classList.remove("hide");
+}
+})
