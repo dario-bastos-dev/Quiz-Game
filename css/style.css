@@ -4,7 +4,7 @@ body{
 
     max-width: 1280px ;
 
-    background-image: url(../img/img-principal/img-principal.png);
+   background-image: url(../img/img-principal/img-principal.png);
 
     background-repeat: no-repeat;
 
@@ -12,7 +12,7 @@ body{
 
     background-position: 50%  22% ;
 
-    background-color: #000; 
+   background-color: #000;
 
     font-family: 'Montserrat', sans-serif, Arial, Helvetica, sans-serif;
 }
@@ -146,4 +146,20 @@ body{
 
     cursor: pointer;
     scale: 1.05;
+}
+
+/* Página de finalizaação */
+#pagina-final {
+
+    text-align: center;
+    margin: 10% auto ;
+}
+
+#pagina-final .texto-acertos {
+
+    color: #2E12DF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 10px 0;
 }
