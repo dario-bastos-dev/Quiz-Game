@@ -432,6 +432,7 @@ verificar.addEventListener("click", function () {
       }
       selection = 0;
     }
+    resp = null;
 
     verificar.classList.add("hide");
     avancar.classList.remove("hide");
